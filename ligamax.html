@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FútbolANDRES TV | Ver Partido En Vivo HD</title>
+
+<meta name="description" content="Ver fútbol en vivo online gratis HD. Partidos en directo y canales deportivos premium.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --bg:#05070d;
+  --card:#0d111b;
+  --border:#1b2230;
+
+  --red:#2ea8ff;
+  --red-dark:#0b5fa5;
+
+  --text:#ffffff;
+  --muted:#9aa3b2;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:
+  radial-gradient(circle at top left, rgba(46,168,255,.12), transparent 30%),
+  radial-gradient(circle at bottom right, rgba(46,168,255,.08), transparent 30%),
+  var(--bg);
+
+  color:var(--text);
+
+  font-family:'Barlow',sans-serif;
+
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* GRID FONDO */
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+
+  background-image:
+  linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+
+  background-size:40px 40px;
+
+  pointer-events:none;
+  z-index:-1;
+}
+
+/* HEADER */
+
+.site-header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+
+  z-index:999;
+
+  background:rgba(5,7,13,.92);
+
+  backdrop-filter:blur(12px);
+
+  border-bottom:1px solid rgba(46,168,255,.2);
+}
+
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+
+  height:78px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 18px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  text-decoration:none;
+}
+
+.logo-icon{
+  width:42px;
+  height:42px;
+
+  border-radius:12px;
+
+  background:linear-gradient(135deg,var(--red),var(--red-dark));
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  box-shadow:0 0 20px rgba(46,168,255,.5);
+}
+
+.logo-icon::after{
+  content:'▶';
+  color:#fff;
+  font-size:15px;
+  margin-left:2px;
+}
+
+.logo h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.2rem;
+  letter-spacing:3px;
+  color:#fff;
+}
+
+.logo h1 span{
+  color:var(--red);
+}
+
+.clock-box{
+  text-align:right;
+}
+
+#clock{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.5rem;
+  letter-spacing:3px;
+  color:var(--red);
+}
+
+#clock-zone{
+  font-size:.7rem;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+/* MAIN */
+
+.main-content{
+  padding-top:110px;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 16px 40px;
+}
+
+/* HERO */
+
+.hero-box{
+  background:
+  linear-gradient(135deg, rgba(46,168,255,.15), rgba(0,0,0,.4));
+
+  border:1px solid rgba(46,168,255,.2);
+
+  border-radius:22px;
+
+  padding:40px 20px;
+
+  text-align:center;
+
+  margin-bottom:30px;
+
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-box::before{
+  content:'';
+  position:absolute;
+  inset:0;
+
+  background:
+  radial-gradient(circle at center, rgba(46,168,255,.15), transparent 60%);
+}
+
+.hero-box h2{
+  position:relative;
+
+  font-family:'Bebas Neue',sans-serif;
+
+  font-size:clamp(2.5rem,7vw,5rem);
+
+  letter-spacing:5px;
+
+  line-height:1;
+
+  margin-bottom:15px;
+}
+
+.hero-box h2 span{
+  color:var(--red);
+}
+
+.hero-box p{
+  position:relative;
+
+  color:#c4cbda;
+
+  max-width:700px;
+
+  margin:auto;
+
+  line-height:1.7;
+}
+
+/* ADS */
+
+.ad-728{
+  width:100%;
+  max-width:728px;
+
+  margin:25px auto;
+
+  background:linear-gradient(180deg,#0d111b,#090d14);
+
+  border:1px solid rgba(46,168,255,.18)
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+  padding:10px;
+}
+
+.ad-728 iframe{
+  max-width:100%;
+  display:block;
+  margin:auto;
+}
+
+/* PLAYER */
+
+.player-box{
+  background:linear-gradient(180deg,#0d111b,#090d14);
+
+  border:1px solid rgba(46,168,255,.18)
+
+  border-radius:22px;
+
+  overflow:hidden;
+
+  margin:30px 0;
+
+  box-shadow:0 10px 30px rgba(46,168,255,.18)
+}
+
+.player-header{
+  padding:18px 20px;
+
+  border-bottom:1px solid rgba(46,168,255,.18)
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.player-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.8rem;
+  letter-spacing:3px;
+}
+
+.player-title span{
+  color:var(--red);
+}
+
+.live-badge{
+  background:var(--red);
+
+  color:#fff;
+
+  padding:6px 12px;
+
+  border-radius:50px;
+
+  font-size:.75rem;
+
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  box-shadow:0 0 14px rgba(46,168,255,.18)
+}
+
+.player-wrapper{
+  position:relative;
+
+  width:100%;
+  padding-top:56.25%;
+
+  background:#000;
+}
+
+.player-wrapper iframe{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  border:0;
+}
+
+/* AD 300 */
+
+.ad-300{
+  width:300px;
+
+  margin:35px auto;
+
+  background:linear-gradient(180deg,#0d111b,#090d14);
+
+  border:1px solid rgba(46,168,255,.18)
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+  padding:10px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid rgba(46,168,255,.18)
+
+  text-align:center;
+
+  padding:28px 15px;
+
+  color:var(--muted);
+
+  font-size:.8rem;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+}
+
+footer span{
+  color:var(--red);
+  font-weight:700;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .header-inner{
+    height:auto;
+    padding:14px 16px;
+
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .main-content{
+    padding-top:140px;
+  }
+
+  .player-header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .hero-box{
+    padding:35px 18px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="site-header">
+
+  <div class="header-inner">
+
+    <a href="https://futbolandres.icu" class="logo">
+
+      <div class="logo-icon"></div>
+
+      <h1>Fútbol<span>ANDRES</span>TV</h1>
+
+    </a>
+
+    <div class="clock-box">
+
+      <div id="clock">00:00:00</div>
+
+      <div id="clock-zone">Hora Local</div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- MAIN -->
+
+<div class="main-content">
+
+  <div class="container">
+
+    <!-- HERO -->
+
+    <section class="hero-box">
+
+      <h2>PARTIDO <span>EN VIVO</span></h2>
+
+      <p>
+        Disfruta fútbol online HD gratis, eventos deportivos internacionales
+        y transmisiones en directo desde cualquier dispositivo.
+      </p>
+
+    </section>
+
+    <!-- PUBLICIDAD TOP -->
+
+    <div class="ad-728">
+
+      
+
+
+    </div>
+
+    <!-- PLAYER -->
+
+    <div class="player-box">
+
+      <div class="player-header">
+
+        <div class="player-title">
+          Canal <span>Liga1Max</span>
+        </div>
+
+        <div class="live-badge">
+          ● EN VIVO
+        </div>
+
+      </div>
+
+      <div class="player-wrapper">
+
+        <iframe
+          src="https://tvf90.com/1.php?stream=liga1max"
+          allowfullscreen
+          scrolling="no">
+        </iframe>
+
+      </div>
+
+    </div>
+
+    <!-- PUBLICIDAD 300 -->
+
+    <div class="ad-300">
+
+      <script>
+  atOptions = {
+    'key' : 'dbb36ec5546a129e94b609e2792c818c',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://czernik.org/22/dbb36ec5546a129e94b609e2792c818c"></script>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+  <span>FútbolANDRESTV</span> © 2026 Todos los derechos reservados.
+</footer>
+
+<script>
+
+function updateClock(){
+
+  const now = new Date();
+
+  const h = String(now.getHours()).padStart(2,'0');
+  const m = String(now.getMinutes()).padStart(2,'0');
+  const s = String(now.getSeconds()).padStart(2,'0');
+
+  document.getElementById('clock').textContent =
+  `${h}:${m}:${s}`;
+
+}
+
+/*  */
+
+document.getElementById('clock-zone').textContent =
+'Hora Local';
+
+updateClock();
+
+setInterval(updateClock,1000);
+
+</script>
+
+<!-- POP -->
+
+<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+
+<script>
+  aclib.runPop({
+    zoneId: '10687730',
+  });
+</script>
+
+<script data-cfasync="false" src="//dh8azcl753e1e.cloudfront.net/?czahd=1200576"></script>
+
+</body>
+</html>
