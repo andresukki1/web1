@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>FútbolANDRES TV | Ver Fútbol En Vivo Gratis HD</title>
+  <meta name="description" content="Ver fútbol en vivo online gratis HD. ESPN, TNT Sports, DSports, Fox Sports y más canales deportivos en directo.">
+  <meta name="keywords" content="futbol en vivo, ver futbol gratis, espn online, tnt sports vivo, deportes hd">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Fútbol ANDRES TV">
+  <meta name="theme-color" content="#0d1117">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- FUENTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root{
+  --bg:#05070d;
+  --card:#0d111b;
+  --border:#1a2333;
+
+  --red:#3fa9ff;      
+  --red2:#66c2ff;    
+
+  --text:#f5f5f5;
+  --muted:#8b94a7;
+}
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:
+      radial-gradient(circle at top left, rgba(63,169,255,.12), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(63,169,255,.08), transparent 30%),
+      var(--bg);
+
+      color:var(--text);
+      font-family:'Barlow',sans-serif;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      inset:0;
+
+      background-image:
+      linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+
+      background-size:40px 40px;
+
+      pointer-events:none;
+      z-index:-1;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    .wrapper{
+      max-width:1300px;
+      margin:auto;
+      padding:0 16px;
+    }
+
+    /* HEADER */
+
+    .header{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:999;
+
+      background:rgba(5,7,13,.92);
+      backdrop-filter:blur(12px);
+
+      border-bottom:1px solid rgba(63,169,255,.25);
+    }
+
+    .header-inner{
+      height:75px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      max-width:1300px;
+      margin:auto;
+      padding:0 16px;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo-icon{
+      width:42px;
+      height:42px;
+
+      border-radius:12px;
+
+      background:linear-gradient(135deg,var(--red),#0066ff);
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      box-shadow:0 0 20px rgba(255,43,43,.5);
+    }
+
+    .logo-icon::after{
+      content:'▶';
+      color:white;
+      font-size:15px;
+      margin-left:2px;
+    }
+
+    .logo h1{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:2.2rem;
+      letter-spacing:3px;
+      color:white;
+    }
+
+    .logo h1 span{
+      color:var(--red);
+    }
+
+    .clock-box{
+      text-align:right;
+    }
+
+    #clock{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:1.6rem;
+      letter-spacing:3px;
+      color:var(--red);
+    }
+
+    #clock-zone{
+      font-size:.7rem;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:2px;
+    }
+
+    /* MAIN */
+
+    .main{
+      padding-top:110px;
+    }
+
+    /* HERO */
+
+    .hero{
+      margin-bottom:40px;
+
+      background:
+      linear-gradient(135deg, rgba(63,169,255,.15), rgba(0,0,0,.4));
+
+      border:1px solid rgba(63,169,255,.2);
+
+      border-radius:20px;
+
+      padding:45px 25px;
+
+      text-align:center;
+
+      overflow:hidden;
+      position:relative;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      inset:0;
+
+      background:
+      radial-gradient(circle at center, rgba(63,169,255,.15), transparent 60%);
+
+      pointer-events:none;
+    }
+
+    .hero h2{
+      position:relative;
+
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(2.5rem,7vw,5rem);
+
+      line-height:1;
+      letter-spacing:5px;
+
+      margin-bottom:18px;
+    }
+
+    .hero h2 span{
+      color:var(--red);
+    }
+
+    .hero p{
+      position:relative;
+
+      max-width:760px;
+      margin:auto;
+
+      color:#c3cad8;
+      font-size:1rem;
+      line-height:1.7;
+    }
+
+    /* AGENDA */
+
+    .agenda{
+      margin-bottom:45px;
+    }
+
+    .section-title{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:2.3rem;
+      letter-spacing:4px;
+      text-align:center;
+      margin-bottom:28px;
+    }
+
+    .section-title span{
+      color:var(--red);
+    }
+
+    .section-title::after{
+      content:'';
+      display:block;
+
+      width:90px;
+      height:4px;
+
+      margin:14px auto 0;
+
+      border-radius:20px;
+
+      background:linear-gradient(to right,var(--red),#0066ff);
+    }
+
+    .agenda-frame{
+      overflow:hidden;
+
+      border-radius:18px;
+
+      border:1px solid rgba(63,169,255,.18);
+
+      background:#000;
+    }
+
+    .agenda-frame iframe{
+      width:100%;
+      height:480px;
+      border:none;
+      display:block;
+    }
+
+    /* CHANNELS */
+
+    .channels{
+      padding-bottom:60px;
+    }
+
+    .channels-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    @media(max-width:1000px){
+      .channels-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media(max-width:600px){
+
+      .header-inner{
+        height:auto;
+        padding:14px 16px;
+        flex-direction:column;
+        gap:10px;
+      }
+
+      .main{
+        padding-top:130px;
+      }
+
+      .channels-grid{
+        grid-template-columns:1fr;
+      }
+
+      .agenda-frame iframe{
+        height:260px;
+      }
+
+    }
+
+    /* CARD */
+
+    .card{
+      background:linear-gradient(180deg,#0d111b,#090d14);
+
+      border:1px solid var(--border);
+
+      border-radius:18px;
+
+      overflow:hidden;
+
+      transition:.25s;
+      position:relative;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+
+      border-color:rgba(63,169,255,.4);
+
+      box-shadow:0 10px 30px rgba(63,169,255,.15);
+    }
+
+    .card::before{
+      content:'';
+
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+
+      height:3px;
+
+      background:linear-gradient(to right,var(--red),#8b0000);
+
+      opacity:0;
+      transition:.25s;
+    }
+
+    .card:hover::before{
+      opacity:1;
+    }
+
+    .card-body{
+      padding:26px 18px;
+
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:16px;
+    }
+
+    .logo-wrap{
+      width:120px;
+      height:70px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .logo-wrap img{
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+
+      transition:.25s;
+    }
+
+    .card:hover .logo-wrap img{
+      transform:scale(1.05);
+      filter:drop-shadow(0 0 8px rgba(63,169,255,.45));
+    }
+
+    .channel-name{
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1.1rem;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+
+    .btn-watch{
+      width:100%;
+
+      padding:12px 10px;
+
+      border-radius:10px;
+
+      border:1px solid rgba(63,169,255,.3);
+
+      background:transparent;
+
+      color:var(--red);
+
+      font-family:'Barlow Condensed',sans-serif;
+      font-weight:700;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      text-align:center;
+
+      transition:.25s;
+    }
+
+    .btn-watch:hover{
+      background:var(--red);
+      color:white;
+
+      box-shadow:0 0 20px rgba(63,169,255,.4);
+    }
+
+    /* FOOTER */
+
+    footer{
+      border-top:1px solid rgba(63,169,255,.12);
+
+      text-align:center;
+
+      padding:30px 16px;
+
+      color:var(--muted);
+
+      font-size:.85rem;
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+
+    footer span{
+      color:var(--red);
+      font-weight:700;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+  <div class="header-inner">
+
+    <a href="/" class="logo">
+
+      <div class="logo-icon"></div>
+
+      <h1>Fútbol<span>ANDRES</span>TV</h1>
+
+    </a>
+
+    <div class="clock-box">
+
+      <div id="clock">00:00:00</div>
+
+      <div id="clock-zone">Hora Local</div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- MAIN -->
+
+<main class="main">
+
+  <div class="wrapper">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <h2>VER FÚTBOL <span>EN VIVO</span></h2>
+
+      <p>
+        Disfruta partidos online en vivo HD, canales deportivos premium,
+        eventos internacionales, ligas europeas y mucho más totalmente gratis.
+      </p>
+
+    </section>
+
+    <!-- AGENDA -->
+
+    <section class="agenda">
+
+      <h2 class="section-title">
+        Agenda <span>Deportiva</span>
+      </h2>
+
+      <div class="agenda-frame">
+
+        <iframe
+          src="agenda1.html"
+          allowfullscreen
+          scrolling="auto">
+        </iframe>
+
+      </div>
+
+    </section>
+
+    <!-- CANALES -->
+
+    <section class="channels">
+
+      <h2 class="section-title">
+        Canales <span>En Vivo</span>
+      </h2>
+
+      <div class="channels-grid">
+
+        <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/espn.png" alt="ESPN">
+            </div>
+
+            <div class="channel-name">
+              ESPN
+            </div>
+
+            <a href="https://futbolandres.icu/espn1.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+        <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/espn2.png" alt="ESPN 2">
+            </div>
+
+            <div class="channel-name">
+              ESPN 2
+            </div>
+
+            <a href="https://futbolandres.icu/espn2.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+        <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/tntsports.png" alt="ESPN 3">
+            </div>
+
+            <div class="channel-name">
+              ESPN 3
+            </div>
+
+            <a href="https://futbolandres.icu/espn3.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+        <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/foxsports.png" alt="ESPN 4">
+            </div>
+
+            <div class="channel-name">
+              ESPN 4
+            </div>
+
+            <a href="https://futbolandres.icu/espn4.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+        <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/dsports.png" alt="ESPN 5">
+            </div>
+
+            <div class="channel-name">
+             ESPN 5
+            </div>
+
+            <a href="https://futbolandres.icu/espn5.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+        <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/tycsports.png" alt="ESPN 6">
+            </div>
+
+            <div class="channel-name">
+              ESPN 6
+            </div>
+
+            <a href="https://futbolandres.icu/espn6.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+        <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="ESPN 7">
+            </div>
+
+            <div class="channel-name">
+              ESPN 7
+            </div>
+
+            <a href="https://futbolandres.icu/espn7.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+ <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="ESPN Deportes">
+            </div>
+
+            <div class="channel-name">
+              ESPN Deportes
+            </div>
+
+            <a href="https://futbolandres.icu/espndeportes.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+ <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="ESPN Premium">
+            </div>
+
+            <div class="channel-name">
+              ESPN Premium
+            </div>
+
+            <a href="https://futbolandres.icu/espnpremium.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+ <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="FOX Sports">
+            </div>
+
+            <div class="channel-name">
+              FOX Sports
+            </div>
+
+            <a href="https://futbolandres.icu/fox1.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+ <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="FOX Sports 2">
+            </div>
+
+            <div class="channel-name">
+              FOX Sports 2
+            </div>
+
+            <a href="https://futbolandres.icu/fox2.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+ <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="FOX Sports 3">
+            </div>
+
+            <div class="channel-name">
+             FOX Sports 3
+            </div>
+
+            <a href="https://futbolandres.icu/fox3.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+ <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="FOX Deportes">
+            </div>
+
+            <div class="channel-name">
+              FOX Deportes
+            </div>
+
+            <a href="https://futbolandres.icu/foxdeportes.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+ <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="DSports">
+            </div>
+
+            <div class="channel-name">
+              DSports
+            </div>
+
+            <a href="https://futbolandres.icu/dsports.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+ <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="DSports 2">
+            </div>
+
+            <div class="channel-name">
+              DSports
+            </div>
+
+            <a href="https://futbolandres.icu/dsports2.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+ <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="DSports Plus">
+            </div>
+
+            <div class="channel-name">
+              DSports Plus
+            </div>
+
+            <a href="https://futbolandres.icu/dsportsplus.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+ <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="Win Plus">
+            </div>
+
+            <div class="channel-name">
+              Win Plus
+            </div>
+
+            <a href="https://futbolandres.icu/winplus.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+ <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="Win Sports">
+            </div>
+
+            <div class="channel-name">
+              Win Sports
+            </div>
+
+            <a href="https://futbolandres.icu/winsports.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+ <!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="Liga1MAX">
+            </div>
+
+            <div class="channel-name">
+              Liga1MAX
+            </div>
+
+            <a href="https://futbolandres.icu/ligamax.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+        <!-- CARD -->
+
+<!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="TyC Sports">
+            </div>
+
+            <div class="channel-name">
+              TyC Sports
+            </div>
+
+            <a href="https://futbolandres.icu/tyc.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+<!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="TNT Chile">
+            </div>
+
+            <div class="channel-name">
+              TNT Chile
+            </div>
+
+            <a href="https://futbolandres.icu/tntchi.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+<!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="UNIVERSO">
+            </div>
+
+            <div class="channel-name">
+              UNIVERSO
+            </div>
+
+            <a href="https://futbolandres.icu/universo.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+<!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="Telemundo">
+            </div>
+
+            <div class="channel-name">
+              Telemundo
+            </div>
+
+            <a href="https://futbolandres.icu/telemundo.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+<!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="TUDN">
+            </div>
+
+            <div class="channel-name">
+              TUDN
+            </div>
+
+            <a href="https://futbolandres.icu/tdn.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+<!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="Canal 5 MX">
+            </div>
+
+            <div class="channel-name">
+              Canal 5 MX
+            </div>
+
+            <a href="https://futbolandres.icu/canal5mx.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+<!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/win.png" alt="Azteca 7">
+            </div>
+
+            <div class="channel-name">
+              Azteca 7
+            </div>
+
+            <a href="https://futbolandres.icu/azteca7.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+
+
+<!-- CARD -->
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="logo-wrap">
+              <img src="img/starplus.png" alt="TNT Argentina">
+            </div>
+
+            <div class="channel-name">
+              TNT Argentina
+            </div>
+
+            <a href="https://futbolandres.icu/tntargg.html" class="btn-watch">
+              ▶ Ver Canal
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  <span>FútbolANDRESTV</span> © Todos los derechos reservados.
+</footer>
+
+<script>
+
+function updateClock(){
+
+  const now = new Date();
+
+  const h = String(now.getHours()).padStart(2,'0');
+  const m = String(now.getMinutes()).padStart(2,'0');
+  const s = String(now.getSeconds()).padStart(2,'0');
+
+  document.getElementById('clock').textContent =
+  `${h}:${m}:${s}`;
+
+}
+
+/*  */
+
+document.getElementById('clock-zone').textContent =
+'Hora Local';
+
+updateClock();
+
+setInterval(updateClock,1000);
+
+</script>
+
+</body>
+</html>
