@@ -1,0 +1,11 @@
+# Instrucciones específicas para el robot de Google
+User-agent: Googlebot
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /private/
+Disallow: /config/
+Disallow: /tmp/
+Allow: /
+
+# Dirección del mapa del sitio web para facilitar la indexación
+Sitemap: https://futbolandres.icu
